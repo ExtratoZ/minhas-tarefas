@@ -1,24 +1,25 @@
 import Tasks from '../../components/Tasks'
 import { Container } from './styles'
+import * as enums from '../../utils/enums/TaskEnum'
 
 const Tarefas = [
   {
     titulo: 'Estudar React',
     descricao: 'Revisar conceitos de hooks e context API',
-    prioridade: 'Importante',
-    status: 'Concluída'
+    prioridade: enums.Prioridade.URGENTE,
+    status: enums.Status.CONCLUIDA
   },
   {
     titulo: 'Estudar Typescript',
     descricao: 'Revisar conceitos de tipos e interfaces',
-    prioridade: 'Importante',
-    status: 'Pendente'
+    prioridade: enums.Prioridade.NORMAL,
+    status: enums.Status.PENDENTE
   },
   {
     titulo: 'Ir a Academia',
     descricao: 'Ficar grandão',
-    prioridade: 'Importante',
-    status: 'Pendente'
+    prioridade: enums.Prioridade.IMPORTANTE,
+    status: enums.Status.PENDENTE
   }
 ]
 
