@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 
 import Tasks from '../../components/Tasks'
-import { Container } from './styles'
+import { Container, Resultado } from './styles'
 import { RootReducer } from '../../store'
 
 const ToDoList = () => {
@@ -29,15 +29,27 @@ const ToDoList = () => {
     }
   }
 
+  const showResult = (qtd: number) => {
+    let message = ''
+    const complemento =
+      termo !== undefined && termo.length > 0 ? `e ${termo}` : ''
+    if (criterio === 'todas') {
+      message = `${qtd} tarefa(s) encontrada(s) como todas
+        ${complemento}`
+    } else {
+      message = `${qtd} mensagen(s) encontrada(s) como ${valor} ${complemento}`
+    }
+    return message
+  }
+
+  const qtdTask = filteredTasks()
+  const message = showResult(qtdTask.length)
+
   return (
     <Container>
+      <Resultado>{message}</Resultado>
       <ul>
-        <li>{termo}</li>
-        <li>{criterio}</li>
-        <li>{valor}</li>
-      </ul>
-      <ul>
-        {filteredTasks().map((t) => (
+        {qtdTask.map((t) => (
           <li key={t.titulo}>
             <Tasks
               id={t.id}
