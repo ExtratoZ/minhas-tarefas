@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 
 import Tasks from '../../components/Tasks'
-import { Container, Resultado } from './styles'
+import { MainContainer, Titulo } from '../../styles'
 import { RootReducer } from '../../store'
 
 const ToDoList = () => {
@@ -46,8 +46,8 @@ const ToDoList = () => {
   const message = showResult(qtdTask.length)
 
   return (
-    <Container>
-      <Resultado>{message}</Resultado>
+    <MainContainer>
+      <Titulo as={'p'}>{message}</Titulo>
       <ul>
         {qtdTask.map((t) => (
           <li key={t.titulo}>
@@ -61,7 +61,7 @@ const ToDoList = () => {
           </li>
         ))}
       </ul>
-    </Container>
+    </MainContainer>
   )
 }
 
