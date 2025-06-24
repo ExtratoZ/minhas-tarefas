@@ -1,6 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import variaveis from './variaveis'
-import { Button } from '../components/Tasks/styles'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -42,8 +41,19 @@ export const Campo = styled.input`
   width: 100%;
 `
 
+export const Button = styled.button`
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  background-color: #2f3640;
+  border-radius: 8px;
+  margin-right: 8px;
+`
+
 export const SaveButton = styled(Button)`
   background-color: ${variaveis.green};
 `
-
 export default GlobalStyle

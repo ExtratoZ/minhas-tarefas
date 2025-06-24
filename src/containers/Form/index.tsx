@@ -6,7 +6,6 @@ import { MainContainer, SaveButton, Titulo } from '../../styles'
 import { Campo } from '../../styles'
 import { Form, Options, Opcao } from './styles'
 import * as enums from '../../utils/enums/TaskEnum'
-import Task from '../../models/Task'
 import { cadastrar } from '../../store/reducers/Tasks'
 
 const Formulario = () => {
@@ -18,15 +17,15 @@ const Formulario = () => {
 
   const cadastrarTarefa = (e: FormEvent) => {
     e.preventDefault()
-    const tarefaAdicionada = new Task(
-      titulo,
-      descricao,
-      enums.Status.PENDENTE,
-      prioridade,
-      9
-    )
 
-    dispatch(cadastrar(tarefaAdicionada))
+    dispatch(
+      cadastrar({
+        titulo,
+        prioridade,
+        descricao,
+        status: enums.Status.PENDENTE
+      })
+    )
     navigate('/')
   }
 

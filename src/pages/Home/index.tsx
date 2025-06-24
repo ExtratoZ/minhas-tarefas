@@ -5,7 +5,7 @@ import ToDoList from '../../containers/ToDoList'
 const Home = () => {
   return (
     <>
-      <SideBar />
+      <SideBar mostrarFiltros />
       <ToDoList />
       <BotaoAdd />
     </>
