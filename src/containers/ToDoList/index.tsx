@@ -12,7 +12,7 @@ const ToDoList = () => {
 
   const filteredTasks = () => {
     let filterTask = itens
-    if (termo) {
+    if (termo !== undefined) {
       filterTask = filterTask.filter(
         (item) => item.titulo.toLowerCase().search(termo.toLowerCase()) >= 0
       )
